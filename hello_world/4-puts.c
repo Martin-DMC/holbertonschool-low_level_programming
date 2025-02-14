@@ -1,3 +1,8 @@
+/**
+ * main - imprime un mensaje en pantalla
+ * Description: escribe en pantalla
+ * Return: retorna 0
+ */
 #include <stdio.h>
 
 int main(void)
