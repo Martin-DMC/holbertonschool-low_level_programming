@@ -1,6 +1,6 @@
 /**
  * main - imprime un mensaje
- * Description: imprime mensaje sin put ni printf
+ * Description: imprime mensaje de otra forma
  * Return: retorna 0
  */
 
