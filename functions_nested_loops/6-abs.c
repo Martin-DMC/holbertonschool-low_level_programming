@@ -1,6 +1,6 @@
 /**
  * _abs - num absouto
- * @int: numero
+ * @_: numero
  *
  * Description: dice el numero absoluto
  * Return: retorna 0
