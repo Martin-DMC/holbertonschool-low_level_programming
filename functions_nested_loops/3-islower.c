@@ -1,5 +1,6 @@
 /**
  * _islower - verifica mayusculas
+ * int c: caracter a verificar
  * Description: verifica si un caracter es mayus o minus
  * Return: retorna 0
  */
