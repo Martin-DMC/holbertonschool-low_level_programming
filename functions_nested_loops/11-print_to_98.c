@@ -1,6 +1,6 @@
 /**
  * print_to_98 - muestra secuencia
- * @n: numero 
+ * @n: numero
  *
  * Description: muestra secuencia hasta el 98
  * Return: retorna 0
