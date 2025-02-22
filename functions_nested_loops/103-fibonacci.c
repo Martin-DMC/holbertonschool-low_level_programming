@@ -2,6 +2,8 @@
  * fibonacci1 - imprime la suma
  *
  * Description: imprime la suma de  num fibonacci < 4000000
+ *
+ * Return: retorna el total
  */
 #include <stdio.h>
 #include "main.h"
@@ -39,7 +41,7 @@ long fibonacci1(void)
 int main(void)
 {
 	int r;
-	
+
 	r = fibonacci1();
 	printf("%d\n", r);
 
