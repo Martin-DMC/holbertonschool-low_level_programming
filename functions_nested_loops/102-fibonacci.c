@@ -6,14 +6,16 @@
  * Description: imprime los primeros 50 num fibonacci
  */
 #include <stdio.h>
+#include "main.h"
 
 void fibonacci(long num1, long num2)
 {
 	long r;
+	int i;
 
 	printf("%ld, %ld,", num1, num2);
 
-	for (int i = 0; i < 48; i++)
+	for (i = 0; i < 48; i++)
 	{
 		r = num1 + num2;
 		if (i == 47)
