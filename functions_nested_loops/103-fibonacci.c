@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include "main.h"
 
-void fibonacci1(void)
+long fibonacci1(void)
 {
 	long num1 = 1;
 	long num2 = 2;
@@ -25,7 +25,7 @@ void fibonacci1(void)
 		num2 = r;
 
 	}
-	printf("%ld\n", total);
+	return (total);
 }
 /**
  * main - punto de entrada del programa
@@ -34,10 +34,14 @@ void fibonacci1(void)
  *
  * Return: retorna 0
  */
+#include <stdio.h>
 
 int main(void)
 {
-	fibonacci1();
+	int r;
+	
+	r = fibonacci1();
+	printf("%d\n", r);
 
-	return (0);
+	return (r);
 }
