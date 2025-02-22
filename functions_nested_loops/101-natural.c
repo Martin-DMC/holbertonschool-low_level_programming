@@ -9,7 +9,8 @@
 
 void sumar_multiplos(int num1, int num2)
 {
-	int i, sum;
+	int i;
+	int sum = 0;
 
 	for (i = 2; i < 1024; i++)
 	{
