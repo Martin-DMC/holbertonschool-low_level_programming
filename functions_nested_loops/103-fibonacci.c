@@ -1,5 +1,5 @@
 /**
- * fibonacci1 - imprime suma
+ * fibonacci1 - imprime la suma
  *
  * Description: imprime la suma de  num fibonacci < 4000000
  */
