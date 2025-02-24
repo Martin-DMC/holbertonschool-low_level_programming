@@ -1,6 +1,6 @@
 /**
  * print_triangle - imprime triangulos
- * @n: numero
+ * @size: numero
  *
  * Description: imprime triangulos en pantalla
  */
