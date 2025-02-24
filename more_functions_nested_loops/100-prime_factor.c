@@ -13,6 +13,7 @@
 long mayor_primo(long n)
 {
 	long factor = 2;
+
 	while (n % factor == 0)
 	{
 		n /= factor;
@@ -24,7 +25,8 @@ long mayor_primo(long n)
 			n /= factor;
 		}
 	}
-	return (n > 1) ? n : factor;
+
+	return ((n > 1) ? n : factor);
 }
 
 /**
