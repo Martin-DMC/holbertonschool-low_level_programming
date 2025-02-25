@@ -6,11 +6,17 @@
  *
  * Return: cantidad de caracteres
  */
-#include <string.h>
 
 int _strlen(char *s)
 {
-	int r = strlen(s);
+	int i = 0;
+	int contador = 0;
 
-	return (r);
+	while (s[i] != '\0')
+	{
+		contador += 1;
+		i++;
+	}
+
+	return (contador);
 }
