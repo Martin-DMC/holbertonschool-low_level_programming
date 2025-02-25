@@ -1,5 +1,5 @@
 /**
- * _strlen - cuenta caracteres
+ * mi_strlen - cuenta caracteres
  * @s: cadena
  *
  * Description: cuenta una cadena de caracteres
@@ -7,7 +7,7 @@
  * Return: cantidad de caracteres
  */
 
-int _strlen(char *s)
+int mi_strlen(char *s)
 {
 	int i = 0;
 	int contador = 0;
