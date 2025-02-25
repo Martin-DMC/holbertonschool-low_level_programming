@@ -6,10 +6,17 @@
  */
 
 #include "main.h"
+#include <limits.h>
 
 void print_number(int n)
 {
-	if (n < 0)
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		_putchar('2');
+		n = 147483648;
+	}
+	else if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
