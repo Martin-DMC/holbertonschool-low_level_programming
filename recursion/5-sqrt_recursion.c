@@ -6,20 +6,19 @@
  *
  * Return: valor
  */
-int calculo(int n, int b, int a)
+long calculo(long n, long b, long a)
 {
-	int mid = (b + a) / 2;
-	int cuadrado = mid * mid;
+	long mid = b + (a - b) / 2;
 
+	if (mid * mid == n)
+	{
+		return (mid);
+	}
 	if (b > a)
 	{
 		return (-1);
 	}
-	if (cuadrado == n)
-	{
-		return (mid);
-	}
-	else if (cuadrado > n)
+	if (mid * mid > n)
 	{
 		return (calculo(n, b, mid - 1));
 	}
