@@ -1,5 +1,5 @@
 /**
- * main1 - muestra cantidad de argumentos
+ * main - muestra cantidad de argumentos
  * @argc: cantidad
  * @argv: argumentos
  *
