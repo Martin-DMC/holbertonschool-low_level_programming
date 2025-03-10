@@ -7,7 +7,7 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int len, i;
+	unsigned int len = 0, i;
 	char *copia;
 
 	while (str[len] != '\0')
