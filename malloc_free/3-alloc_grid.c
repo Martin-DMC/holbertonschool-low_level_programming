@@ -1,5 +1,49 @@
 #include <stdlib.h>
 /**
+ * liberacion - forma recursiva para liberar funcion
+ * @grid: puntero
+ * @row: filas
+ *
+ * Return: puntero
+ */
+void liberacion(int **grid, int row)
+{
+	if (row < 0)
+		return;
+
+	free(grid[row]);
+	liberacion(grid, row - 1);
+}
+/**
+ * alloc_helper - forma recursiva para hacer grid
+ * @grid: puntero
+ * @width: ancho
+ * @height: largo
+ * @row: fila
+ *
+ * Return: puntero
+ */
+int **alloc_helper(int **grid, int width, int height, int row)
+{
+	int j;
+
+	if (row == height)
+		return (grid);
+
+	grid[row] = (int *)malloc(width * sizeof(int));
+	if (grid[row] == NULL)
+	{
+		liberacion(grid, row - 1);
+		free(grid);
+		return (NULL);
+	}
+
+	for (j = 0; j < width; j++)
+		grid[row][j] = 0;
+
+	return (alloc_helper(grid, width, height, row + 1));
+}
+/**
  * alloc_grid - devuelve puntero a array bidimensional
  * @width: ancho
  * @height: largo
@@ -8,8 +52,8 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int i, j;
 	int **grid;
+	int **resultado;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -18,29 +62,9 @@ int **alloc_grid(int width, int height)
 	if (grid == NULL)
 		return (NULL);
 
-	for (i = 0; i < height; i++)
-	{
-		grid[i] = (int *)malloc(width * sizeof(int));
-		if (grid[i] == NULL)
-		{
-			for (j = 0; j < i; j++)
-			{
-				free(grid[j]);
-			}
-			free(grid);
-			return (NULL);
-		}
-	}
-	for (i = 0; i < height; i++)
-	{
-		for (j = 0; j < width; j++)
-		{
-			grid[i][j] = 0;
-		}
-	}
-	for (i = 0; i < height; i++)
-		free(grid[i]);
-	free(grid);
+	resultado = alloc_helper(grid, width, height, 0);
+	if (resultado == NULL)
+		free(grid);
 
-	return (NULL);
+	return (resultado);
 }
