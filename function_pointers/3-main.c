@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 {
 	int a, b, resultado;
 	char *s;
+	int (*op)(int, int);
 
 	if (argc != 4)
 	{
@@ -23,19 +24,19 @@ int main(int argc, char *argv[])
 	b = atoi(argv[3]);
 	s = argv[2];
 
-	if (s == NULL)
+	op = get_op_func(s);
+	if (!op)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%")) && b == 0)
+	if ((b == 0 && strcmp(s, "%") == 0) || (b == 0 && strcmp(s, "/") == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	resultado = get_op_func(s)(a, b);
+	resultado = op(a, b);
 	printf("%d\n", resultado);
 
 	return (0);
