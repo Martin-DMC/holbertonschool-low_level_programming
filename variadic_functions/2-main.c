@@ -12,5 +12,6 @@ int main(void)
     print_strings(", ", 0);
     print_strings(", ", 3, NULL, "Jay", "Django");
     print_strings(", ", 3, "Jay", "", "Django");
+    print_strings(", ", 3, "Jay", "", NULL);
     return (0);
 }

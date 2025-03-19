@@ -24,8 +24,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			valor = va_arg(args, char *);
 			if (valor == NULL)
-				printf("%s%s", nil, separator);
-			else if (i == (n - 1))
+				valor = nil;
+			if (i == (n - 1))
 				printf("%s\n", valor);
 			else
 				printf("%s%s", valor, separator);
@@ -34,7 +34,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			valor = va_arg(args, char *);
 			if (valor == NULL)
-				printf("%s", nil);
+				valor = nil;
 			else if (i == (n - 1))
 				printf("%s\n", valor);
 			else
