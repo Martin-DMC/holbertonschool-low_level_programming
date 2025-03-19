@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stddef.h>
-#include <string.h>
 /**
  * print_strings - imprime los str que le pasamos con un separador
  * @separator: separador
@@ -12,7 +11,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list args;
 	unsigned int i;
 	char *valor;
-	char *nil = "(nil)", *c_vacia = "\0";
+	char *nil = "(nil)";
 
 	if (n == 0 && separator != NULL)
 		printf("\n");
@@ -28,8 +27,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				printf("%s%s", nil, separator);
 			else if (i == (n - 1))
 				printf("%s\n", valor);
-			else if (strcmp(valor, c_vacia) == 0)
-				printf("%s%s", nil, separator);
 			else
 				printf("%s%s", valor, separator);
 		}
@@ -40,8 +37,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				printf("%s", nil);
 			else if (i == (n - 1))
 				printf("%s\n", valor);
-			else if (strcmp(valor, c_vacia) == 0)
-				printf("%s", nil);
 			else
 				printf("%s", valor);
 		}
