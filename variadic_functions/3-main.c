@@ -8,10 +8,11 @@
  */
 int main(void)
 {
-    print_all("ceis", 'B', 3, "stSchool");
-    print_all("csis", 'B',"", 3, "stSchool");
-    print_all("coias", 'B', 3, NULL);
-    print_all("caies", 'B', 3, "stSchool");
-    print_all("", 'B', 3, "stSchool");
+    print_all("fcsi", 3.14435, 'H', "#Cisfun", 0);
+    print_all("mnbvfqcepolsbxzi", 3.14435, 'H', "#Cisfun", 0);
+    print_all("qwertyuopadghjklzxvbnm");
+    print_all("");
+    print_all(NULL);
+    print_all("fcsi", 3.14435, 'H', NULL, 402);
     return (0);
 }
