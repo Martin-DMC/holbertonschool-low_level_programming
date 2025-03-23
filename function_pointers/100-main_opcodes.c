@@ -17,10 +17,11 @@ int main(int argc, char *argv[])
 		}
 		for (i = 0; i < n_bytes; i++)
 		{
-			printf("%02x, ", n_bytes);
-			if (i == (n_bytes - 1))
-				printf("%02x\n", n_bytes);
+			printf("%02x, ", dir[i]);
+			if (i < (n_bytes - 1))
+				printf(" ");
 		}
+		printf("\n");
 	}
 	else
 	{
