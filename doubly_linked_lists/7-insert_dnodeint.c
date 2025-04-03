@@ -84,7 +84,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new, *next = NULL;
 	unsigned int cant_nodo = 0;
 
-	if (*h == NULL)
+	if (h == NULL)
 		return (NULL);
 
 	new = malloc(sizeof(dlistint_t));
@@ -93,6 +93,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->n = n;
 	new->next = NULL;
 	new->prev = NULL;
+	if (*h == NULL && idx == 0)
+	{
+		*h = new;
+		return (new);
+	}
 	if (idx == 0)
 	{
 		new = add_dnodeint(h, n);
