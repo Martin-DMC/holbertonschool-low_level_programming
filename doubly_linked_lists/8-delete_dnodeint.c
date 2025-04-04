@@ -53,12 +53,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				return (1);
 			}
 		}
-		if (index == (cant_nodos - 1))
-		{
-			(tmp->prev)->next = NULL;
-			free(tmp);
-			return (1);
-		}
 		if (i == index)
 		{
 			if (tmp->prev != NULL)
