@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdio.h>
 /**
- * binary_to_unit - conversor de numeros binarios a enteros
+ * binary_to_uint - conversor de numeros binarios a enteros
  * @b: puntero a la cadena de binarios
  *
  * Return: numero convertido o 0 si falla
