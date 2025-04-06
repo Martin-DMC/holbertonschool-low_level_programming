@@ -24,7 +24,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	else
 	{
-		archivo = open(filename, O_APPEND);
+		archivo = open(filename, O_WRONLY | O_APPEND);
 		if (archivo == -1)
 			return (-1);
 		while (text_content[i] != '\0')
