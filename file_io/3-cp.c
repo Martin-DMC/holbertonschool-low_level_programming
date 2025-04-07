@@ -20,7 +20,7 @@ int copiar_text(int a, int b)
 		escritos = write(b, buffer, leidos);
 		if (escritos == -1)
 		{
-			dprintf(1, "Error: Can't write to fd %d\n", b);
+			dprintf(2, "Error: Can't write to fd %d\n", b);
 			close(a);
 			close(b);
 			exit(99);
@@ -28,7 +28,7 @@ int copiar_text(int a, int b)
 	}
 	if (leidos == -1)
 	{
-		dprintf(1, "Error: can't read from fd %d\n", a);
+		dprintf(2, "Error: can't read from fd %d\n", a);
 		close(a);
 		close(b);
 		exit(98);
@@ -48,31 +48,31 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(1, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	archivo = open(argv[1], O_RDONLY);
 	if (archivo == -1)
 	{
-		dprintf(1, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	destino = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (destino == -1)
 	{
-		dprintf(1, "Error: Can't write to %s\n", argv[2]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		close(archivo);
 		exit(99);
 	}
 	copiar_text(archivo, destino);
 	if  (close(archivo) == -1)
 	{
-		dprintf(1, "Error: Can't close fd %d\n", archivo);
+		dprintf(2, "Error: Can't close fd %d\n", archivo);
 		exit(100);
 	}
 	if (close(destino) == -1)
 	{
-		dprintf(1, "Error: Can't close fd %d\n", destino);
+		dprintf(2, "Error: Can't close fd %d\n", destino);
 		exit(100);
 	}
 	return (0);
