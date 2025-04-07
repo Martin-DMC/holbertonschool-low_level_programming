@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		close(archivo);
-		exit(98);
+		exit(99);
 	}
 	copiar_text(archivo, destino, argv[1]);
 	if  (close(archivo) == -1)
