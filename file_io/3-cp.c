@@ -29,7 +29,7 @@ int copiar_text(int a, int b, char *name)
 	}
 	if (leidos == -1)
 	{
-		dprintf(2, "Error: can't read from fd %s\n", name);
+		dprintf(2, "Error: can't read from file %s\n", name);
 		close(a);
 		close(b);
 		exit(98);
