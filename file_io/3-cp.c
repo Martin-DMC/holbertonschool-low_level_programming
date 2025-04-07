@@ -54,13 +54,13 @@ int main(int argc, char *argv[])
 	archivo = open(argv[1], O_RDONLY);
 	if (archivo == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(1, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	destino = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (destino == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		dprintf(1, "Error: Can't write to %s\n", argv[2]);
 		close(archivo);
 		exit(99);
 	}
