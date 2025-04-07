@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <string.h>
 /**
  * copiar_text - recibe dos descriptores de archivos y los copia
  * @a: descriptor archivo origen
@@ -61,6 +62,11 @@ int main(int argc, char *argv[])
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
+	}
+	if (strcmp(argv[1], argv[2]) == 0)
+	{
+		dprintf(2, "Error: Input and output file can't be the same\n");
+		exit(98);
 	}
 	archivo = open(argv[1], O_RDONLY);
 	if (archivo == -1)
