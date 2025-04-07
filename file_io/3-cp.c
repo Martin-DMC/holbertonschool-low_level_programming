@@ -16,7 +16,15 @@ int copiar_text(int a, int b, char *name)
 	char buffer[1024];
 	int leidos, escritos;
 
-	while ((leidos = read(a, buffer, sizeof(buffer))) > 0)
+	leidos = read(a, buffer, sizeof(buffer));
+	if (leidos == -1)
+	{
+		dprintf(2, "Error: Can't read from fd %s\n", name);
+		close (a);
+		close(b);
+		exit(98);
+	}
+	while (leidos > 0)
 	{
 		escritos = write(b, buffer, leidos);
 		if (escritos == -1)
@@ -26,13 +34,15 @@ int copiar_text(int a, int b, char *name)
 			close(b);
 			exit(99);
 		}
-	}
-	if (leidos == -1)
-	{
-		dprintf(2, "Error: Can't read from fd %s\n", name);
-		close(a);
-		close(b);
-	exit(98);
+
+		leidos = read(a, buffer, sizeof(buffer));
+		if (leidos == -1)
+		{
+			dprintf(2, "Error: Can't read from fd %s\n", name);
+			close(a);
+			close(b);
+		exit(98);
+		}
 	}
 	return (0);
 }
