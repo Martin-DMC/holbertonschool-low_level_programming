@@ -28,7 +28,7 @@ int copiar_text(int a, int b, char *name)
 		}
 		if (leidos == 0)
 			break;
-		
+
 		escritos = write(b, buffer, leidos);
 		if (escritos == -1)
 		{
@@ -36,6 +36,13 @@ int copiar_text(int a, int b, char *name)
 			close(a);
 			close(b);
 			exit(99);
+		}
+		else if (escritos != leidos)
+		{
+			dprintf(2, "Error: Mismatch in write size\n");
+			close(a);
+			close(b);
+			exit(98);
 		}
 	}
 	return (0);
