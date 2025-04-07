@@ -29,14 +29,12 @@ int copiar_text(int a, int b, char *name)
 	}
 	if (leidos == -1)
 	{
-                dprintf(2, "Error: Can't read from fd %s\n", name);
-                close(a);
-                close(b);
-                exit(98);
-        }
-
-        return (0);
-
+		dprintf(2, "Error: Can't read from fd %s\n", name);
+		close(a);
+		close(b);
+	exit(98);
+	}
+	return (0);
 }
 /**
  * main - recibe dos archivos y copia el origen al destino
@@ -65,7 +63,7 @@ int main(int argc, char *argv[])
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		close(archivo);
-		exit(99);
+		exit(98);
 	}
 	copiar_text(archivo, destino, argv[1]);
 	if  (close(archivo) == -1)
