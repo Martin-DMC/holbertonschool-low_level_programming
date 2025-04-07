@@ -3,7 +3,6 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <string.h>
 /**
  * copiar_text - recibe dos descriptores de archivos y los copia
  * @a: descriptor archivo origen
@@ -48,6 +47,22 @@ int copiar_text(int a, int b, char *name)
 	return (0);
 }
 /**
+ * _strcmp - toma dos texto y los compara para saber si son iguales
+ * @s1: puntero al primer texto
+ * @s2: puntero al segundo texto
+ *
+ * Return: 0 si son iguales
+ */
+int _strcmp(char *s1, char *s2)
+{
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}
+/**
  * main - recibe dos archivos y copia el origen al destino
  * @argc: cantidad de archivos
  * @argv: array que contiene los archivos
@@ -63,7 +78,7 @@ int main(int argc, char *argv[])
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (strcmp(argv[1], argv[2]) == 0)
+	if (_strcmp(argv[1], argv[2]) == 0)
 	{
 		dprintf(2, "Error: Input and output file can't be the same\n");
 		exit(98);
