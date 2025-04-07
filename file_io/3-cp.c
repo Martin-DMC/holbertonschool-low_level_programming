@@ -7,6 +7,7 @@
  * copiar_text - recibe dos descriptores de archivos y los copia
  * @a: descriptor archivo origen
  * @b: descriptor archivo destino
+ * @name: nombre archivo original
  *
  * Return: siempre 0
  */
