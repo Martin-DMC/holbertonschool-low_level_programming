@@ -20,7 +20,7 @@ int copiar_text(int a, int b)
 		escritos = write(b, buffer, leidos);
 		if (escritos == -1)
 		{
-			dprintf(1, "Error: Can't write to %i\n", b);
+			dprintf(1, "Error: Can't write to fd %d\n", b);
 			close(a);
 			close(b);
 			exit(99);
@@ -28,7 +28,7 @@ int copiar_text(int a, int b)
 	}
 	if (leidos == -1)
 	{
-		dprintf(1, "Error: can't read from file %i\n", a);
+		dprintf(1, "Error: can't read from fd %d\n", a);
 		close(a);
 		close(b);
 		exit(98);
