@@ -29,12 +29,14 @@ int copiar_text(int a, int b, char *name)
 	}
 	if (leidos == -1)
 	{
-		dprintf(2, "Error: can't read from file %s\n", name);
-		close(a);
-		close(b);
-		exit(98);
-	}
-	return (0);
+                dprintf(2, "Error: Can't read from fd %s\n", name);
+                close(a);
+                close(b);
+                exit(98);
+        }
+
+        return (0);
+
 }
 /**
  * main - recibe dos archivos y copia el origen al destino
