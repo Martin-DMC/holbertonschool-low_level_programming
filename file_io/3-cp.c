@@ -10,7 +10,7 @@
  *
  * Return: siempre 0
  */
-int copiar_text(int a, int b)
+int copiar_text(int a, int b, char *name)
 {
 	char buffer[1024];
 	int leidos, escritos;
@@ -28,7 +28,7 @@ int copiar_text(int a, int b)
 	}
 	if (leidos == -1)
 	{
-		dprintf(2, "Error: can't read from fd %d\n", a);
+		dprintf(2, "Error: can't read from fd %s\n", name);
 		close(a);
 		close(b);
 		exit(98);
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 		close(archivo);
 		exit(99);
 	}
-	copiar_text(archivo, destino);
+	copiar_text(archivo, destino, argv[1]);
 	if  (close(archivo) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", archivo);
